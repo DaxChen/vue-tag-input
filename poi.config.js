@@ -29,6 +29,7 @@ module.exports = (options = {}) => {
   // production, build as component
   return {
     ...basic,
+    transformModules: ['string-width', 'strip-ansi', 'ansi-regex'],
     entry: {
       [`${component ? '' : 'umd/'}${camelToKebab(componentName)}`]: `./src/${componentName}.vue`
     },
